@@ -6,18 +6,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
     <title>Regex Matcher - Results</title>
     <style>
+
     </style>
     
 </head>
 <body>
     <h2>MATCHED INFORMATION</h2>
-    <ul>
+    <table>
         {% for match in matches %}
-            <li onclick="highlightInputText({{ match.start }}, {{ match.end }})">
-                Match: {{ loop.index }},
-                String: {{ match.text }}
-            </li>
+        <tr onclick="highlightInputText({{ match.start }}, {{ match.end }})">
+            <td class="matches">Match {{ loop.index }}</td>
+            <td class="range">{{ match.start }}-{{ match.end }}</td>
+            <td class="text">{{ match.text }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 </body>
 </html>

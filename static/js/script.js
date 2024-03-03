@@ -39,11 +39,6 @@ function highlightOriginalText(start, end, color) {
     originalText.innerHTML = highlightedText;
 }
 
-function resetOriginalText() {
-    var originalText = document.getElementById('original-text');
-    var text = originalText.textContent;
-    originalText.innerHTML = text;
-}
 
 function highlightInputText(start, end, color) {
     console.log('Clicked on matched string:', start, end, color);
