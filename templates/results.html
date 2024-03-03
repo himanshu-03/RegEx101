@@ -33,12 +33,11 @@
     </script>
 </head>
 <body>
-    <h1>Results</h1>
-    <h2>Original Text:</h2>
+    <h2>TEST STRING</h2>
     <p id="original-text">{{ test_string }}</p>
-    <h2>Matched Strings</h2>
+    <h2>MATCHED INFORMATION</h2>
     <ul>
-        {% for match in matches %}
+            {% for match in matches %}
             {% set start_index = match.start %}
             {% set end_index = match.end %}
             {% set before_match = test_string[:start_index] %}
