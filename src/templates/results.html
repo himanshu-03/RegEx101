@@ -14,7 +14,7 @@
     <h2>MATCHED INFORMATION</h2>
     <table>
       {% for match in matches %}
-      <tr onclick="highlightInputText('{{ match.start }}, {{ match.end }}')">
+      <tr onclick="highlightInputText('{{ match.start }}', '{{ match.end }}')">
         <td class="matches">Match {{ loop.index }}</td>
         <td class="range">{{ match.start }}-{{ match.end }}</td>
         <td class="text">{{ match.text }}</td>
