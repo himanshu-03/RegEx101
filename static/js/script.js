@@ -24,12 +24,11 @@ function updateResults() {
 function addHoverFunctionality() {
     var matchedStrings = document.querySelectorAll('.highlight');
     matchedStrings.forEach(function(element) {
-        element.addEventListener('mouseover', function() {
+        element.addEventListener('click', function() {
             var startIndex = parseInt(element.dataset.start);
             var endIndex = parseInt(element.dataset.end);
             highlightOriginalText(startIndex, endIndex, 'yellow');
         });
-        element.addEventListener('mouseout', resetOriginalText);
     });
 }
 
@@ -44,4 +43,11 @@ function resetOriginalText() {
     var originalText = document.getElementById('original-text');
     var text = originalText.textContent;
     originalText.innerHTML = text;
+}
+
+function highlightInputText(start, end, color) {
+    console.log('Clicked on matched string:', start, end, color);
+    var textarea = document.getElementById('test_string');
+    textarea.focus();
+    textarea.setSelectionRange(start, end);
 }

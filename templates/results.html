@@ -1,5 +1,3 @@
-<!-- templates/results.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,48 +6,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
     <title>Regex Matcher - Results</title>
     <style>
-        {% set highlight_colors = ['yellow', 'lightblue', 'lightgreen', 'lightpink', 'lightgray'] %}
-        {% for i in range(0, highlight_colors|length) %}
-        .highlight-{{ i }} {
-            background-color: {{ highlight_colors[i] }};
-        }
-        {% endfor %}
-        .original-highlight {
-            background-color: orange; /* Change this color as desired */
-        }
     </style>
-    <script>
-        function highlightOriginalText(start, end, color) {
-            var originalText = document.getElementById('original-text');
-            var text = originalText.textContent;
-            var highlightedText = text.slice(0, start) + '<span class="original-highlight" style="background-color: ' + color + ';">' + text.slice(start, end) + '</span>' + text.slice(end);
-            originalText.innerHTML = highlightedText;
-        }
     
-        function resetOriginalText() {
-            var originalText = document.getElementById('original-text');
-            var text = originalText.textContent;
-            originalText.innerHTML = text;
-        }
-    </script>
 </head>
 <body>
-    <h2>TEST STRING</h2>
-    <p id="original-text">{{ test_string }}</p>
     <h2>MATCHED INFORMATION</h2>
     <ul>
-            {% for match in matches %}
-            {% set start_index = match.start %}
-            {% set end_index = match.end %}
-            {% set before_match = test_string[:start_index] %}
-            {% set match_text = test_string[start_index:end_index] %}
-            {% set after_match = test_string[end_index:] %}
-            <li onmouseover="highlightOriginalText({{ match.start }}, {{ match.end }}, '{{ highlight_colors[loop.index0] }}')" onmouseout="resetOriginalText()">
+        {% for match in matches %}
+            <li onclick="highlightInputText({{ match.start }}, {{ match.end }})">
                 Match: {{ loop.index }},
                 String: {{ match.text }}
             </li>
         {% endfor %}
     </ul>
-    
 </body>
 </html>
