@@ -1,0 +1,81 @@
+<!-- templates/regex_matcher.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+    <style>
+        {% set highlight_colors = ['yellow', 'lightblue', 'lightgreen', 'lightpink', 'lightgray'] %}
+        {% for i in range(0, highlight_colors|length) %}
+        .highlight-{{ i }} {
+            background-color: {{ highlight_colors[i] }};
+        }
+        {% endfor %}
+        .original-highlight {
+            background-color: orange; /* Change this color as desired */
+        }
+    </style>
+</head>
+<body>
+    <h1>Regex Matcher</h1>
+    <form>
+        <label for="test_string">Test String:</label><br>
+        <input type="text" id="test_string" name="test_string" oninput="updateResults()"><br>
+        <label for="regex_pattern">Regex Pattern:</label><br>
+        <input type="text" id="regex_pattern" name="regex_pattern" oninput="updateResults()"><br><br>
+    </form>
+
+    <!-- Results section -->
+    <div id="results"></div>
+
+    <script>
+        function updateResults() {
+            var testString = document.getElementById('test_string').value;
+            var regexPattern = document.getElementById('regex_pattern').value;
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        document.getElementById('results').innerHTML = xhr.responseText;
+                        // Reapply hover functionality after updating results
+                        addHoverFunctionality();
+                    } else {
+                        console.error('Error:', xhr.status);
+                    }
+                }
+            };
+            xhr.open('POST', '/regex_matcher/results', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('test_string=' + encodeURIComponent(testString) + '&regex_pattern=' + encodeURIComponent(regexPattern));
+        }
+
+        // Function to add hover functionality to matched strings
+        function addHoverFunctionality() {
+            var matchedStrings = document.querySelectorAll('.highlight');
+            matchedStrings.forEach(function(element) {
+                element.addEventListener('mouseover', function() {
+                    var startIndex = parseInt(element.dataset.start);
+                    var endIndex = parseInt(element.dataset.end);
+                    highlightOriginalText(startIndex, endIndex, 'yellow');
+                });
+                element.addEventListener('mouseout', resetOriginalText);
+            });
+        }
+
+        function highlightOriginalText(start, end, color) {
+            var originalText = document.getElementById('original-text');
+            var text = originalText.textContent;
+            var highlightedText = text.slice(0, start) + '<span class="original-highlight" style="background-color: ' + color + ';">' + text.slice(start, end) + '</span>' + text.slice(end);
+            originalText.innerHTML = highlightedText;
+        }
+
+        function resetOriginalText() {
+            var originalText = document.getElementById('original-text');
+            var text = originalText.textContent;
+            originalText.innerHTML = text;
+        }
+    </script>
+</body>
+</html>
