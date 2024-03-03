@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
     <title>Regex Matcher - Results</title>
     <style>
         {% set highlight_colors = ['yellow', 'lightblue', 'lightgreen', 'lightpink', 'lightgray'] %}
@@ -45,9 +46,7 @@
             {% set after_match = test_string[end_index:] %}
             <li onmouseover="highlightOriginalText({{ match.start }}, {{ match.end }}, '{{ highlight_colors[loop.index0] }}')" onmouseout="resetOriginalText()">
                 Match: {{ loop.index }},
-                String: {{ match.text }},
-                Matched String: {{ before_match }}
-                <span class="highlight-{{ loop.index0 }}" style="background-color: {{ highlight_colors[loop.index0] }}">{{ match_text }}</span>{{ after_match }}
+                String: {{ match.text }}
             </li>
         {% endfor %}
     </ul>
