@@ -29,7 +29,9 @@ def validate_email():
         if "." not in email or "@" not in email:
             return jsonify({"result": "The email address is incomplete."})
         elif email.count("@") > 1:
-            return jsonify({"result": 'The email address contains more than one "@" symbol.'})
+            return jsonify(
+                {"result": 'The email address contains more than one "@" symbol.'}
+            )
         else:
             return jsonify({"result": "Valid email address"})
     else:

@@ -7,6 +7,14 @@ body {
   color: #fff;
 }
 
+.josefin-sans-demo {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 .background-container {
   position: fixed;
   top: 0;
@@ -16,13 +24,13 @@ body {
   background-image: url('../img/bg_email.jpg');
   background-size: cover;
   background-position: center center;
-  filter: brightness(50%);
+  filter: brightness(25%);
   z-index: -10;
 }
 
 .glassmorphism-container {
   width: 50%;
-  height: 50%;
+  height: 60%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -142,13 +150,25 @@ body {
   color: #fff;
   font-size: 0.9rem;
   background-color: transparent;
-  width: 50% !important;
+  width: 50%;
   box-sizing: border-box;
   padding-inline: 0.5em;
   padding-block: 0.7em;
-  border: 1px solid #ccc !important;
-  border-bottom: var(--border-height) solid var(--border-before-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid gray;
+  text-transform: capitalize;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6); /* Add box shadow */
+  clip-path: polygon(
+    /* Top-left */ 0% var(--curve-size),
+    var(--curve-size) 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - var(--curve-size)),
+    /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+  transition:
+    color 250ms,
+    clip-path 500ms,
+    box-shadow 500ms; /* Add transitions */
 }
 
 .input-border {
@@ -208,7 +228,7 @@ body {
 }
 
 .alert-simple.alert-success {
-  margin-top: 40px;
+  margin-top: 60px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -227,7 +247,7 @@ body {
 
 .alert-simple.alert-danger,
 .alert-simple.alert-danger1 {
-  margin-top: 40px;
+  margin-top: 60px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
