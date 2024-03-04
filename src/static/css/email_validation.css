@@ -8,12 +8,11 @@ body {
 }
 
 .josefin-sans-demo {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }
-
 
 .background-container {
   position: fixed;
