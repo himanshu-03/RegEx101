@@ -37,3 +37,10 @@ function closeAlert(alertId) {
     alertElement.style.display = 'none';
   }
   
+function resetEmailField() {
+    document.getElementById('email').value = ''; // Clear the value of the email field
+    document.getElementById('alert-success').style.display = 'none';
+    document.getElementById('alert-danger').style.display = 'none';
+    document.getElementById('alert-danger1').style.display = 'none';
+}
+  
