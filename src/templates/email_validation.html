@@ -1,18 +1,127 @@
-<!-- templates/email_validation.html -->
+<!-- email_validation.html -->
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="{{ url_for('static', filename='js/email_validation.js') }}"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/email_validation.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>Email Validation</title>
   </head>
   <body>
-    <h1>Email Validation</h1>
-    <form action="/validate_email" method="POST">
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" /><br /><br />
-      <button type="submit">Validate Email</button>
-    </form>
+    <div class="background-container"></div>
+    <div class="glassmorphism-container">
+      <h1>Email Validation</h1>
+      <form id="emailForm">
+        <div class="form-container">
+          <div class="form-control-1">
+            <input
+              class="input input-alt"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address to validate"
+              required
+              type="text"
+            />
+            <span class="input-border input-border-alt"></span>
+          </div>
+        </div>
+        <br />
+        <a class="fancy" href="#">
+          <span class="top-key"></span>
+          <span class="btn" onclick="validateEmail()"> Validate Email </span>
+          <span class="bottom-key-1"></span>
+          <span class="bottom-key-2"></span>
+        </a>
+      </form>
+      <div id="result">
+        <section>
+          <div class="col-sm-12">
+            <div
+              class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
+              style="display: none"
+              id="alert-success"
+            >
+              <button
+                type="button"
+                class="close font__size-18"
+                data-dismiss="alert"
+                onclick="closeAlert('alert-success')"
+              >
+                <span aria-hidden="true"
+                  ><a> <i class="fas fa-times greencross"></i> </a
+                ></span>
+                <span class="sr-only">Close</span>
+              </button>
+              <i class="start-icon far fa-check-circle faa-tada animated"></i>
+              <strong class="font__weight-semibold">Well done!</strong> Your
+              email is valid!
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div
+              class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
+              style="display: none"
+              id="alert-danger"
+              role="alert"
+              data-brk-library="component__alert"
+            >
+              <button
+                type="button"
+                class="close font__size-18"
+                data-dismiss="alert"
+                onclick="closeAlert('alert-danger')"
+              >
+                <span aria-hidden="true">
+                  <i class="fas fa-times danger"></i>
+                </span>
+                <span class="sr-only">Close</span>
+              </button>
+              <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+              <strong class="font__weight-semibold">Oh snap!</strong> Your email
+              is invalid!
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div
+              class="alert fade alert-simple alert-danger1 alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
+              style="display: none"
+              id="alert-danger1"
+              role="alert"
+              data-brk-library="component__alert"
+            >
+              <button
+                type="button"
+                class="close font__size-18"
+                data-dismiss="alert"
+                onclick="closeAlert('alert-danger1')"
+              >
+                <span aria-hidden="true">
+                  <i class="fas fa-times danger"></i>
+                </span>
+                <span class="sr-only">Close</span>
+              </button>
+              <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+              <strong class="font__weight-semibold">Oh snap!</strong> Your email
+              field is blank!
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

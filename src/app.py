@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import re
 
 app = Flask(__name__)
@@ -27,13 +27,13 @@ def validate_email():
     email = request.form["email"]
     if re.match(email_regex_pattern, email):
         if "." not in email or "@" not in email:
-            return "The email address is incomplete."
+            return jsonify({"result": "The email address is incomplete."})
         elif email.count("@") > 1:
-            return 'The email address contains more than one "@" symbol.'
+            return jsonify({"result": 'The email address contains more than one "@" symbol.'})
         else:
-            return "Valid email address"
+            return jsonify({"result": "Valid email address"})
     else:
-        return "Invalid email address"
+        return jsonify({"result": "Invalid email address"})
 
 
 @app.route("/regex_matcher/results", methods=["POST"])
