@@ -32,14 +32,6 @@ function addHoverFunctionality() {
     });
 }
 
-function highlightOriginalText(start, end, color) {
-    var originalText = document.getElementById('test_string');
-    var text = originalText.textContent;
-    var highlightedText = text.slice(0, start) + '<span class="original-highlight" style="background-color: ' + color + ';">' + text.slice(start, end) + '</span>' + text.slice(end);
-    originalText.innerHTML = highlightedText;
-}
-
-
 function highlightInputText(start, end, color) {
     console.log('Clicked on matched string:', start, end, color);
     var textarea = document.getElementById('test_string');
