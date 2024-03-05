@@ -19,7 +19,7 @@ def validate_email_form():
     return render_template("email_validation.html")
 
 
-email_regex_pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+email_regex_pattern = r'^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,}$'
 
 
 @app.route("/validate_email", methods=["POST"])

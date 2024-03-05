@@ -154,7 +154,6 @@ body {
   padding-inline: 0.5em;
   padding-block: 0.7em;
   border: 1px solid gray;
-  text-transform: capitalize;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6); /* Add box shadow */
   clip-path: polygon(
     /* Top-left */ 0% var(--curve-size),
