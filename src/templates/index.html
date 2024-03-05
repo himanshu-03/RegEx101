@@ -1,18 +1,46 @@
-<!-- templates/index.html -->
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
     <title>Home</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/regex_matcher">Regex Matcher</a></li>
-        <li><a href="/validate_email">Email Validation</a></li>
-      </ul>
-    </nav>
+    <div class="background-container"></div>
+    <div class="container">
+      <a href="/regex_matcher">
+        <button class="button" data-text="Awesome">
+          <span class="actual-text">&nbsp;&nbsp;run&nbsp;regex&nbsp;</span>
+          <span aria-hidden="true" class="hover-text"
+            >&nbsp;&nbsp;run&nbsp;regex&nbsp;</span
+          >
+        </button>
+      </a>
+      <a href="/validate_email">
+        <button class="button" data-text="Awesome" style="margin-left: 50px">
+          <span class="actual-text">&nbsp;&nbsp;validate&nbsp;email&nbsp;</span>
+          <span aria-hidden="true" class="hover-text"
+            >&nbsp;&nbsp;validate&nbsp;email&nbsp;</span
+          >
+        </button>
+      </a>
+    </div>
   </body>
 </html>
