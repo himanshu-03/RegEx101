@@ -1,3 +1,78 @@
+## RegEx101
+
+RegEx101 is a simple flask application that allows users to input a test string and a regular expression (regex) and displays all the matches found. It also provides a feature to validate if a given email ID is valid or not.
+
+## ✨ Features
+- **Regex Matching**: Test your regular expressions against input text.
+- **Match Highlighting**: Click on matches to highlight the matched patterns in the input text.
+- **Email Validation**: Validate email addresses using regular expressions.
+- **Deployment on AWS Cloud EC2**: Deploy the application on an AWS EC2 instance for easy accessibility.
+ 
+## 🗃️ Usage
+
+<details>
+<summary><b>Regex Matching</b></summary>
+<br />    
+    
+1. Enter your regular expression in the provided input field.
+2. Enter your test text in the text area.
+3. Click on the "Match" button to see the matches.
+4. Click on a match to highlight the matched pattern in the input text.
+    
+</details>
+
+<details>
+<summary><b>Email Validation</b></summary>
+<br />
+    
+1. Enter your email regex in the provided input field.
+2. Enter the email address you want to validate.
+3. Click on the "Validate" button to check if the email address matches the regex.
+
+</details>
+
+<br />
+
+## 📷 Screenshots
+
+<details>
+    <summary><b>HomePage</b></summary>
+    <img src="">
+</details>
+<details>
+    <summary><b>Regex Matcher Page</b></summary>
+    <img src="">
+</details>
+<details>
+    <summary><b>Email Validation Page</b></summary>
+    <img src="">
+</details>
+
+<br />
+
+## 💻 Contributions
+
+- Any contributions you make are greatly appreciated
+- Would be glad to hear about new features to add in the website
+- Clone the repository:
+    ```
+    git clone <repository_url>
+    ```
+- Install all the required dependencies
+    ```
+    pip install -r requirement.txt
+    ```
+- Run the Flask Application:
+    ```
+    cd src
+    flask run
+    ```
+- Open your web browser and go to http://localhost:5000 to access the application.
+
+- Start testing your email and any input strings using the provided interface.
+
+<br />
+
 ## 🪪 License
 This project follows the [MIT LICENSE](https://choosealicense.com/licenses/mit/).
 
