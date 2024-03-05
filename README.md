@@ -37,15 +37,15 @@ RegEx101 is a simple flask application that allows users to input a test string 
 
 <details>
     <summary><b>HomePage</b></summary>
-    <img src="">
+    <img src="![image](https://github.com/himanshu-03/RegEx101/assets/97957777/7b0fbe41-d5f6-4e50-aa7e-f58f41657a1a)">
 </details>
 <details>
     <summary><b>Regex Matcher Page</b></summary>
-    <img src="">
+    <img src="![image](https://github.com/himanshu-03/RegEx101/assets/97957777/0dd4ceba-9a22-4e85-b489-02a48fee057b)">
 </details>
 <details>
     <summary><b>Email Validation Page</b></summary>
-    <img src="">
+    <img src="![image](https://github.com/himanshu-03/RegEx101/assets/97957777/14c4308d-4775-49be-ad7c-b708cbafd483)">
 </details>
 
 <br />
