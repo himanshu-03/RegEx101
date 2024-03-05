@@ -29,8 +29,6 @@ RegEx101 is a simple flask application that allows users to input a test string 
 
 </details>
 
-<br />
-
 ## 📷 Screenshots
 
 <details>
@@ -51,8 +49,6 @@ RegEx101 is a simple flask application that allows users to input a test string 
   <img src="https://github.com/himanshu-03/RegEx101/assets/97957777/14c4308d-4775-49be-ad7c-b708cbafd483" style="width: 75%;">
 </details>
 
-
-<br />
 
 ## 💻 Contributions
 
